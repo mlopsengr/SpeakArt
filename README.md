@@ -1,8 +1,14 @@
 # AssemblyAI
-
+This project is based of an astonishing previous post by ....from AssemblyAI on how DALLE2 works.
 
 ## What is AssemblyAI?
 
+
+
+For my love for music, my audio file says "an artistic impression of several musical instruments"
+## What is Streamlit?
+
+## Jina AI
 
 
 ## Storing your API key

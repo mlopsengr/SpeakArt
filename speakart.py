@@ -2,10 +2,14 @@ import os
 import time
 import requests
 from io import BytesIO
+import numpy as np
 import streamlit as st
 import openai
+from docarray import Document
 from dalle2 import Dalle2
 import streamlit.components.v1 as components
+
+
 
 # DESIGN implement changes to the standard streamlit UI/UX
 st.set_page_config(page_title="streamlit_audio_recorder")
@@ -22,7 +26,7 @@ st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
     unsafe_allow_html=True)  # lightmode
 
 
-def audiorec_demo_app():
+def record_audio():
 
     parent_dir = os.path.dirname(os.path.abspath(__file__))
     # Custom REACT-based component for recording client audio in browser
@@ -113,13 +117,54 @@ def get_transcription_result(transcription_id):
 
 def call_dalle(prompt):
      
-    pass
+    server_url = 'grpcs://dalle-flow.dev.jina.ai'
+
+    doc = Document(text=prompt).post(server_url, parameters={'num_images': 2})
+    da = doc.matches
+
+    da.plot_image_sprites(fig_size=(10,10), show_index=True)
+
+    fav_id = 3
+
+    fav = da[fav_id]
+    fav.embedding = doc.embedding
+
+    time.sleep(1)
+
+    diffused = fav.post(f'{server_url}', parameters={'skip_rate': 0.6, 'num_images': 4}, target_executor='diffusion').matches
+
+    diffused.plot_image_sprites(fig_size=(10,10), show_index=True)
+
+    dfav_id = 2
+    fav = diffused[dfav_id]
+
+    fav = fav.post(f'{server_url}/upscale')
+    fav.display()
+
 
 
 def main():
 
     st.title("Speaking Art into Existence")
     file = "input.wav"
-    
+
+    record_audio(file)
+
     upload_url = assemblyai_upload(file)
     st.write('AssemblyAI has received your prompt')
+
+    transcription_id = transcribe(upload_url)
+    st.write('AssemblyAI is transcribing your prompt')
+
+    prompt = get_transcription_result(transcription_id)
+    st.write('AssemblyAI has transcribed your prompt')
+    st.info(prompt)
+
+    image_output = call_dalle(prompt)
+    st.write('Your image has been generated generated your image')
+
+
+
+if __name__ == "__main__":
+    main()
+    
