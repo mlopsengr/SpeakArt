@@ -8,6 +8,7 @@ From the original post, it can be summarized simply as: "DALL-E 2 can generate s
 
 While DALLE-2 has been used to generate images from text, it can also be used to generate text from audio data, leveraging on AssemblyAI's speech-to-text API. This is what we will be doing in this notebook.
 
+## Dependencies
 ## What is AssemblyAI?
 For my love for music, my audio file says "an artistic impression of several musical instruments"
 
