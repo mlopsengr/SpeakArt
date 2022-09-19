@@ -77,8 +77,8 @@ def record_audio():
 
 
 
+
 assemblyai_key = os.environ.get('ASSEMBLYAI_API_KEY')
-assemblyai_key = 'cc5bbff100b9482d9766dedca9597dc1'
 
 
 upload_endpoint = "https://api.assemblyai.com/v2/upload"
