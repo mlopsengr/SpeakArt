@@ -39,7 +39,7 @@ streamlit run speakart.py
 ```
 
 
-![image info](./image.png)
+![image info](./image1.png)
 
 ## What is Streamlit?
 Streamlit is an open-source Python library that makes it easy to create and deploy custom web apps. It is very easy to use and is very powerful. You can find the documentation [here](https://docs.streamlit.io/en/stable/)
