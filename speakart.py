@@ -54,7 +54,7 @@ def record_audio():
     # STREAMLIT AUDIO RECORDER Instance
     val = st_audiorec()
     # web component returns arraybuffer from WAV-blob
-    #st.write('Audio data received in the Python backend will appear below this message ...')
+
 
     if isinstance(val, dict):  # retrieve audio data
         with st.spinner('retrieving audio-recording...'):
@@ -79,7 +79,7 @@ def record_audio():
 
 
 assemblyai_key = os.environ.get('ASSEMBLYAI_API_KEY')
-
+aassemblyai_key = 'cc5bbff100b9482d9766dedca9597dc1'
 
 upload_endpoint = "https://api.assemblyai.com/v2/upload"
 transcripting_endpoint = "https://api.assemblyai.com/v2/transcript"
