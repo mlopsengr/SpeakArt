@@ -9,6 +9,34 @@ From the original post, it can be summarized simply as: "DALL-E 2 can generate s
 While DALLE-2 has been used to generate images from text, it can also be used to generate text from audio data, leveraging on AssemblyAI's speech-to-text API. This is what we will be doing in this notebook.
 
 ## Dependencies
+The required dependencies for this project can be found in the `requirements.txt` file. You can install them by running the following command:
+
+```bash
+pip install -r requirements.txt
+```
+Most importantly, you will require your API key from AssemblyAI, and need streamlit and jinaai installed.
+```bash
+pip install streamlit
+pip install jina
+```
+
+# Functions
+This project contains 5 building functions and one main function. The functions are as follows:
+- `get_audio()`: This function is used to get the audio file from the user. It uses streamlit to create a file uploader widget.
+- `assemblyai_upload()`: This function is used to upload the audio file to AssemblyAI's speech-to-text API. It returns the transcript of the audio file.
+- `transcribe()`: This function is used to transcribe the audio file. It uses the `get_audio()` and `assemblyai_upload()` functions to get the transcript of the audio file.
+- `get_transcription_results()`: This function is used to get the transcription results from the user as a prompt for the DALL-E model.
+- `call_dalle()`: This function is used to call the DALL-E model. It uses the `get_transcription_results()` function to get the prompt for the DALL-E model.
+- `main()`: This is the main function which is used to run the entire project. It runs each function accordingly using the `transcribe()` and `get_transcription_results()` functions to get the transcription results and prompt for the DALL-E model.
+
+note: An input.wav file is provided in the repository for testing purposes which gets updated every time the `get_audio()` function is called.
+
+# Running the project
+To run the project, you can run the following command:
+```bash
+streamlit run speakart.py
+```
+
 ## What is AssemblyAI?
 For my love for music, my audio file says "an artistic impression of several musical instruments"
 
