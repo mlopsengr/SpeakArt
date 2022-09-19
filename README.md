@@ -42,7 +42,7 @@ streamlit run speakart.py
 ![image info](./image1.png)
 
 ## What is Streamlit?
-Streamlit is an open-source Python library that makes it easy to create and deploy custom web apps. It is very easy to use and is very powerful. You can find the documentation [here](https://docs.streamlit.io/en/stable/)
+Streamlit is an open-source Python library that makes it easy to create and deploy custom web apps. It is very easy to use and is very powerful. You can find the documentation [here](https://docs.streamlit.io/en/stable/) to get started with Streamlit.
 
 ## Jina AI
 Jina AI is an open-source MLOps framework that allows you to build cross-modal and multi-modal applications on the cloud. With their [CLIP-as-a-service](https://clip-as-service.jina.ai/) product, they provide free access to DALL·E Flow, an interactive workflow for generating high-definition images from text prompt leveraging on [DALL·E-Mega](https://github.com/borisdayma/dalle-mini), GLID-3 XL, and Stable Diffusion.You can find the documentation [here](https://github.com/jina-ai/dalle-flow/)
