@@ -2,7 +2,7 @@
 AssemblyAI is a deep learning company focused on state-of-the-art models integrated into API's for audio and video transcription, speech synthesis, and natural language processing. Their APIs are designed to be easy to use and deploy. For more information, please visit [assemblyai.com](https://www.assemblyai.com/), you can also easily get started with AssemblyAI with a free account [here](https://app.assemblyai.com/). One of their widely used API's is their speech to text API. 
 
 ## Speaking art into existence :paintbrush:
-This project is based of an astonishing post by [Ryan O'Connor](https://www.linkedin.com/in/ryan-s-oconnor/), a Developer Educator for Machine Learning AI, at AssemblyAI on how DALLE2 works. You can find the original post [here](https://www.assemblyai.com/blog/how-dall-e-2-actually-works/). I highly recommend you to read it before going through this project.
+This project is based off an astonishing post by [Ryan O'Connor](https://www.linkedin.com/in/ryan-s-oconnor/), a Developer Educator for Machine Learning AI, at AssemblyAI on how DALLE2 works. You can find the original post [here](https://www.assemblyai.com/blog/how-dall-e-2-actually-works/). I highly recommend you to read it before going through this project.
 
 From the original post, it can be summarized that: "DALL-E 2 can generate semantically plausible photorealistic images given a text prompt, and can produce images with specific artistic styles, can produce variations of the same salient features represented in different ways, and can modify existing images"
 
