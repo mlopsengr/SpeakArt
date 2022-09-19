@@ -29,16 +29,13 @@ This project contains 5 building functions and one main function. The functions 
 - `call_dalle()`: This function is used to call the DALL-E model. It uses the `get_transcription_results()` function to get the prompt for the DALL-E model.
 - `main()`: This is the main function which is used to run the entire project. It runs each function accordingly using the `transcribe()` and `get_transcription_results()` functions to get the transcription results and prompt for the DALL-E model.
 
-note: An input.wav file is provided in the repository for testing purposes which gets updated every time the `get_audio()` function is called.
+note: An input.wav file is provided in the repository for testing purposes which gets updated every time the `get_audio()` function is called. For my love for music, my audio file says "an artistic impression of several musical instruments"
 
 # Running the project
 To run the project, you can run the following command:
 ```bash
 streamlit run speakart.py
 ```
-
-## What is AssemblyAI?
-For my love for music, my audio file says "an artistic impression of several musical instruments"
 
 ![image info](./image.png)
 
