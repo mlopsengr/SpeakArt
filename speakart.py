@@ -16,15 +16,15 @@ from IPython.display import Image, display
 #matplotlib.use('MacOSX')
 
 
-# DESIGN implement changes to the standard streamlit UI/UX
+
 st.set_page_config(page_title="streamlit_audio_recorder")
-# Design move app further up and remove top padding
+
 st.markdown('''<style>.css-1egvi7u {margin-top: -3rem;}</style>''',
     unsafe_allow_html=True)
-# Design change st.Audio to fixed height of 45 pixels
+
 st.markdown('''<style>.stAudio {height: 45px;}</style>''',
     unsafe_allow_html=True)
-# Design change hyperlink href link color
+
 st.markdown('''<style>.css-v37k9u a {color: #ff4c4b;}</style>''',
     unsafe_allow_html=True)  # darkmode
 st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
@@ -34,12 +34,12 @@ st.markdown('''<style>.css-nlntq9 a {color: #ff4c4b;}</style>''',
 def record_audio():
 
     parent_dir = os.path.dirname(os.path.abspath(__file__))
-    # Custom REACT-based component for recording client audio in browser
+    
     build_dir = os.path.join(parent_dir, "st_audiorec/frontend/build")
-    # specify directory and initialize st_audiorec object functionality
+
     st_audiorec = components.declare_component("st_audiorec", path=build_dir)
 
-    # TITLE and Creator information
+
     st.title("Speaking Art into Existence \U0001F58C")
     st.markdown( 
         f'Powered by  <img src="https://www.assemblyai.com/_next/static/media/light.f35331fb.svg" width="100" height="100">',
@@ -56,11 +56,11 @@ def record_audio():
     # web component returns arraybuffer from WAV-blob
 
 
-    if isinstance(val, dict):  # retrieve audio data
+    if isinstance(val, dict):  
         with st.spinner('retrieving audio-recording...'):
             ind, val = zip(*val['arr'].items())
-            ind = np.array(ind, dtype=int)  # convert to np array
-            val = np.array(val)             # convert to np array
+            ind = np.array(ind, dtype=int) 
+            val = np.array(val)             
             sorted_ints = val[ind]
             stream = BytesIO(b"".join([int(v).to_bytes(1, "big") for v in sorted_ints]))
             wav_bytes = stream.read()
@@ -69,7 +69,7 @@ def record_audio():
         # display audio data as received on the Python side
         #st.audio(wav_bytes, format='audio/wav')
 
-        # save audio data to file
+  
         with open('input.wav', 'wb') as f:
             f.write(wav_bytes)
 
